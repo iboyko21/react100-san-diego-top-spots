@@ -5,7 +5,7 @@ const Nightmare = require('nightmare');
 const expect = require('chai').expect;
 const topspots = require('./topspots.json');
 
-const nightmareTimeout = 6500;
+const nightmareTimeout = 30000;
 
 let nightmare;
 
