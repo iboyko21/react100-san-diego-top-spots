@@ -1,5 +1,6 @@
-import axios from 'axios';
 import React, { Component } from 'react';
+import axios from 'axios';
+import { TopSpot } from './topspot';
 
 class App extends Component {
   constructor(props) {
@@ -12,31 +13,36 @@ class App extends Component {
 
   componentWillMount() {
     axios
-          .get('https://www.cccareerssdts.demo.coolify.io')
-          .then(response => response.data)
-          .then(topspots => this.setState({ topspots }));
+    .get('https://origin-top-spots-api.herokuapp.com/api/topspots')
+    .then(response => response.data)
+    .then(topspots => this.setState({topspots}))
+    // to get data through local route
+    // .get('/getdata')
+    // .then(response => this.setState({topspots : response.data}));
   }
 
   render() {
     return (
-      <div className='App'>
-
-        <div className="container">
-          <div className="row gy-3">
-            <div className='col-sm-12 bg-light p-5 text-center'>
-              <h1>San Diego Top Spots</h1>
-              <h4>A list of the top 30 places to see in San Diego, California</h4>
-            </div>
-          
-            <div className='col-sm-12 bg-light'>
-              <pre>
-                { JSON.stringify(this.state.topspots, null, 2) }
-              </pre>
+        <div className="container-fluid">
+          <div className='card sticky-top bg-warning border-0'>
+            <div className='card-header text-center p-4 border-0'>
+                <h1 className='card-title'>San Diego Top Spots</h1>
+                <h6>A list of the top 30 places to see in San Diego, California</h6>
             </div>
           </div>
-        </div>
-
-      </div>
+          
+          
+              {
+                this.state.topspots.map((topspot, i) => (
+                  <TopSpot
+                          key={i}
+                          name={topspot.name}
+                          description={topspot.description}
+                          location={topspot.location}
+                          />
+                ))
+              }
+          </div>
     );
   }
 }
