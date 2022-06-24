@@ -25,7 +25,7 @@ class App extends Component {
     return (
         <div className="container-fluid">
           <div className='card sticky-top bg-warning border-0'>
-            <div className='card-header text-center p-4 border-0'>
+            <div className='card-header text-center p-5 border-0'>
                 <h1 className='card-title'>San Diego Top Spots</h1>
                 <h6>A list of the top 30 places to see in San Diego, California</h6>
             </div>
