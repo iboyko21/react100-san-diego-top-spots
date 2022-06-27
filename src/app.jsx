@@ -13,7 +13,7 @@ class App extends Component {
 
   componentWillMount() {
     axios
-    .get('https://origin-top-spots-api.herokuapp.com/api/topspots')
+    .get('https://www.cccareerssdts.demo.coolify.io/')
     .then(response => response.data)
     .then(topspots => this.setState({topspots}))
     // to get data through local route
