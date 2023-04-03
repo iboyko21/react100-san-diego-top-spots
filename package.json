@@ -1,11 +1,11 @@
 {
   "name": "san-diego-top-spots-react",
   "version": "0.1.0",
-  "description": "Base application setup for creating a new react project.",
+  "description": "San Diego Top Spots",
   "main": "server/index.js",
   "scripts": {
     "build": "webpack --mode development",
-    "start": "node server/index.js",
+    "start": "npm run build && node server/index.js",
     "less": "lessc src/css/style.less dist/css/style.css",
     "lint": "eslint .",
     "test": "npm run build && mocha test/.setup.js test/*.spec.js --exit"
@@ -55,10 +55,6 @@
     "sinon": "^1.17.6",
     "sinon-chai": "^2.8.0",
     "url-loader": "^0.5.9"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://"
   },
   "license": "MIT"
 }

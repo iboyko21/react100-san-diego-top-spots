@@ -5,7 +5,6 @@ import { TopSpot } from './topspot';
 class App extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       topspots: []
     };
@@ -13,7 +12,7 @@ class App extends Component {
 
   componentWillMount() {
     axios
-    .get('https://www.cccareerssdts.demo.coolify.io/')
+    .get('https://sd-top-spots.tbox.tools/')
     .then(response => response.data)
     .then(topspots => this.setState({topspots}))
     // to get data through local route
@@ -30,7 +29,6 @@ class App extends Component {
                 <h6>A list of the top 30 places to see in San Diego, California</h6>
             </div>
           </div>
-          
           
               {
                 this.state.topspots.map((topspot, i) => (
