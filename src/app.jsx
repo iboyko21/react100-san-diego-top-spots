@@ -12,12 +12,12 @@ class App extends Component {
 
   componentWillMount() {
     axios
-    .get('https://sd-top-spots.tbox.tools/')
-    .then(response => response.data)
-    .then(topspots => this.setState({topspots}))
+    // .get('https://sd-top-spots.tbox.tools/')
+    // .then(response => response.data)
+    // .then(topspots => this.setState({topspots}))
     // to get data through local route
-    // .get('/getdata')
-    // .then(response => this.setState({topspots : response.data}));
+    .get('/getdata')
+    .then(response => this.setState({topspots : response.data}));
   }
 
   render() {
